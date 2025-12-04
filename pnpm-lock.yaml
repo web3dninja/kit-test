@@ -8,6 +8,9 @@ dependencies:
   '@hookform/resolvers':
     specifier: ^5.2.2
     version: 5.2.2(react-hook-form@7.66.1)
+  '@netlify/plugin-nextjs':
+    specifier: ^5.15.1
+    version: 5.15.1
   '@radix-ui/react-alert-dialog':
     specifier: ^1.1.15
     version: 1.1.15(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.2.0)(react@19.2.0)
@@ -1818,6 +1821,11 @@ packages:
       '@tybys/wasm-util': 0.10.1
     dev: true
     optional: true
+
+  /@netlify/plugin-nextjs@5.15.1:
+    resolution: {integrity: sha512-HXm94tteOuA0FYwhkxjYIPe0zta+Dsu0wz7LnhfqVlaYcRaOLjHtd2vgfmpz3np/fx9TQg3gCfqGkXt2a9i7Aw==}
+    engines: {node: '>=18.0.0'}
+    dev: false
 
   /@next/env@16.0.3:
     resolution: {integrity: sha512-IqgtY5Vwsm14mm/nmQaRMmywCU+yyMIYfk3/MHZ2ZTJvwVbBn3usZnjMi1GacrMVzVcAxJShTCpZlPs26EdEjQ==}
