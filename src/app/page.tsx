@@ -1,12 +1,18 @@
+import { Suspense } from 'react';
 import { PostList } from './post/components';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { PlusCircle } from 'lucide-react';
 import { getPosts } from '@/lib/firestore/posts';
+import { DefaultLoading } from '@/components/ui/default-loading';
+import Loading from './loading';
+
+async function PostsContent() {
+  const posts = await getPosts();
+  return <PostList posts={posts} />;
+}
 
 export default async function HomePage() {
-  const posts = await getPosts();
-
   return (
     <div className="content container mx-auto">
       <div className="content-header">
@@ -24,7 +30,9 @@ export default async function HomePage() {
         </p>
       </div>
 
-      <PostList posts={posts} />
+      <Suspense fallback={<Loading />}>
+        <PostsContent />
+      </Suspense>
     </div>
   );
 }
